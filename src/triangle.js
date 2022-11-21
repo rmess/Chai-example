@@ -63,14 +63,16 @@ class Triangle {
     }
 
     getLongestSide(){
-        if (this.triangleIsEquilateral())
+        if (this.triangleIsEquilateral()){
+
+        }
         else if(this.sideLength1 >= this.sideLength2 && this.sideLength1 >= this.sideLength3){
             return 1;
         }
         else if(this.sideLength2 >= this.sideLength1 && this.sideLength2 >= this.sideLength3){
             return 2;
         }
-        else if {
+        else {
             return 3;
         }
     }
