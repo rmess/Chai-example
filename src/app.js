@@ -1,6 +1,7 @@
 class Cube {
-    constructor(length) {
+    constructor(length,price = 0) {
         this.length = length;
+        this.price = price;
     }
     
     getSideLength () {
@@ -16,6 +17,33 @@ class Cube {
     }
 }
 
+class Panier {
+    constructor() {
+        this.basket = new Array();
+    }
+
+    addCube (cube) {
+        this.basket.push(cube)
+    }
+
+    removeCube(cube) {
+        const index = this.basket.indexOf(cube);
+        if (index !== -1) {
+          this.basket.splice(index,1);
+        }
+    }
+
+    calculateTotalPrice() {
+        let totalPrice = 0;
+        for (const cube of this.basket) {
+          totalPrice += cube.price;
+        }
+        return totalPrice;
+    }
+
+}
+
 module.exports = {
-    Cube:Cube
+    Cube:Cube,
+    Panier:Panier
 }
